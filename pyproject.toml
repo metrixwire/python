@@ -1,0 +1,40 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "metrixwire"
+version = "0.2.0"
+description = "Zero-config APM SDK for Python. Call init() once — every request, query, cache op and outbound HTTP call is instrumented automatically."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [{ name = "MetrixWire" }]
+keywords = ["apm", "observability", "tracing", "monitoring", "zero-config"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Intended Audience :: Developers",
+  "Topic :: System :: Monitoring",
+]
+# The core has ZERO required runtime dependencies — it uses only the stdlib
+# (urllib, threading, queue, contextvars). Instrumentation of third-party
+# libraries is best-effort: if the library isn't importable, it's skipped.
+dependencies = []
+
+[project.optional-dependencies]
+# Purely for exercising the demos / integration testing — never required.
+dev = [
+  "flask",
+  "fastapi",
+  "starlette",
+  "django",
+  "psycopg2-binary",
+  "requests",
+  "redis",
+]
+
+[project.urls]
+Homepage = "https://metrixwire.com"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/metrixwire"]
