@@ -10,7 +10,7 @@ import os
 from dataclasses import dataclass
 from typing import Optional
 
-DEFAULT_ENDPOINT = "http://localhost:3000/ingest"
+DEFAULT_ENDPOINT = "https://metrixwire.com/ingest"
 DEFAULT_FLUSH_INTERVAL_MS = 5000
 DEFAULT_TIMEOUT_MS = 3000
 DEFAULT_MAX_BATCH = 20

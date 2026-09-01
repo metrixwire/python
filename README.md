@@ -35,7 +35,7 @@ With no arguments, `init()` reads its config from the environment:
 | Env var | Purpose |
 |---|---|
 | `METRIXWIRE_KEY` | Project API key (required to enable) |
-| `METRIXWIRE_ENDPOINT` | Ingest URL — base or full `/ingest` (default `http://localhost:3000/ingest`) |
+| `METRIXWIRE_ENDPOINT` | Ingest URL — base or full `/ingest` (default `https://metrixwire.com/ingest`) |
 | `METRIXWIRE_ENABLED` | `false` to disable entirely |
 
 A missing API key runs the SDK **disabled** — it never raises.
@@ -83,7 +83,7 @@ Database spans also capture a `sourceLocation` (`file.py:42`) pointing at the ne
 ```python
 metrixwire.init(
     api_key="mw_...",                        # required (or METRIXWIRE_KEY)
-    endpoint="http://localhost:3000/ingest",  # default; base URL is accepted too
+    endpoint="https://metrixwire.com/ingest",  # default; base URL is accepted too
     flush_interval_ms=5000,                   # how often batches are sent
     enabled=True,                             # set False to disable entirely
     timeout_ms=3000,                          # send timeout (short, non-blocking)
